@@ -6,7 +6,6 @@ internal=False
 
 class My_Perf_Counter:
     def __init__(self, name_or_function, suppress_out=False, *args, **kwargs) -> None:
-        print(__loader__)
         if isinstance(name_or_function, str):
             self.name = name_or_function
             self.func = None
@@ -41,6 +40,6 @@ class My_Perf_Counter:
 
 
 def test_function_time(func, suppress=False, *args, **kwargs):
-    internal = True
+    internal = True #doesn't change the global/Module variable
     with My_Perf_Counter(func, suppress, args, kwargs=kwargs):
             pass
